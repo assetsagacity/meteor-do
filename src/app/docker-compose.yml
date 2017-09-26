@@ -1,0 +1,25 @@
+# This is the compose file for live development
+# All code is mounted from local file system and recompiled as needed
+version: '3.3'
+
+services:
+  meteor:
+    image: assetsagacity/meteor-do:latest
+    links:
+      - mongo
+    environment:
+      MONGO_URL: "mongodb://mongo:27017/meteor"
+    volumes:
+      # application code
+      - ${PWD}:/app
+    ports:
+      - 3000:3000
+    restart: "no"
+  mongo:
+    image: mongo:3.2
+    volumes:
+      # database data files
+      - ${PWD}/.temp/mongo:/data/db
+    ports:
+      - 27017:27017
+    restart: "no"

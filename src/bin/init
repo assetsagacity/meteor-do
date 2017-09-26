@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+if [ -z "$1" ]; then
+  echo "let's create a new meteor project!"
+  meteor create .
+  mkdir -p .temp/mongo
+else
+  echo "cloning the repository $1"
+  git clone $1 /app
+  rm -rf /app/.git
+  echo "now install dependencies..."
+  meteor npm install
+fi
+# todo: ensure we don't have an existing docker-compose
+cp ~/docker-compose.yml /app
+cp ~/meteor.sh /app/meteor
+echo "all done, just call "
