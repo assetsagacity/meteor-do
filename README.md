@@ -14,7 +14,7 @@ install and run a new self-contained instance of VulcanJS (for example)
 - `docker run --rm -v {$PWD}:/app assetsagacity/meteor-do init https://github.com/VulcanJS/Vulcan.git`
 - `./meteor`
 
-Or create a new empty meteor project: `docker run --rm -v {$PWD}:/app assetsagacity/meteor-do init`
+Or create a new empty meteor project: `docker run --rm -v $PWD:/app assetsagacity/meteor-do init`
 
 And perform standard meteor operations using `./meteor`, for example:
 
