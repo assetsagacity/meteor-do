@@ -8,20 +8,19 @@ Requires only `docker` and `docker-compose` on your machine.
 
 ## Usage
 
-install and run a new self-contained instance of VulcanJS
+install and run a new self-contained instance of VulcanJS (for example)
 
-```
-mkdir myProject && cd myProject
-docker run --rm -v {$PWD}:/app assetsagacity/meteor-do init https://github.com/VulcanJS/Vulcan.git
-./meteor
-```
+- `mkdir myProject && cd myProject`
+- `docker run --rm -v {$PWD}:/app assetsagacity/meteor-do init https://github.com/VulcanJS/Vulcan.git`
+- `./meteor`
 
-- Create a new empty meteor project: `docker run --rm -v {$PWD}:/app assetsagacity/meteor-do init`
+Or create a new empty meteor project: `docker run --rm -v {$PWD}:/app assetsagacity/meteor-do init`
 
-- perform standard meteor operations using `./meteor`, for example:
-     - `./meteor` runs the project
-     - `./meteor npm install --save somePackage`
-     - `./meteor shell`
+And perform standard meteor operations using `./meteor`, for example:
+
+- `./meteor` runs the project
+- `./meteor npm install --save somePackage`
+- `./meteor shell`
 
 ## Install
 
@@ -52,4 +51,10 @@ These are all solved by a dockerized development environment approach.
 Docker is officially supported on Mac and Windows,
 but in my experience mounting local files is unbearably slow.
 
-Unfortunately, this docker uses 
+Unfortunately, this docker mounts all source files from the local filesystem,
+so performance on non-Linux systems is not guaranteed (meaning: it's probably awfully slow)
+
+## Thanks
+
+- [docker](https://www.docker.com/) really changed my developer life
+- [golden-garage/meteor-dev](https://github.com/golden-garage/meteor-dev) was the basis for this setup

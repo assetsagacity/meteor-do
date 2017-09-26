@@ -14,4 +14,4 @@ fi
 # todo: ensure we don't have an existing docker-compose
 cp ~/docker-compose.yml /app
 cp ~/meteor.sh /app/meteor
-echo "all done, just call "
+echo "all done, now run `./meteor` to start server"

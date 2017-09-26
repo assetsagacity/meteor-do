@@ -1,8 +1,6 @@
 FROM debian:stretch-slim
 MAINTAINER Xavier Priour <xavier.priour@assetsagacity.com>
 
-#ARG APP_LOCALE=en_US
-#ARG APP_CHARSET=UTF-8
 ARG APP_USER=meteor
 ARG APP_USER_DIR=/home/${APP_USER}
 
