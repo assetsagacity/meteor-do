@@ -13,5 +13,9 @@ if [ -z "$1" ]; then
 elif [ "$running" ]; then
   docker-compose exec $name meteor $*
 else
-  docker-compose run $name meteor $*
+  docker-compose run --rm $name meteor $*
+  exit_code=$?
+  # down is needed to not leave linked mongo container hanging
+  docker-compose down
+  exit $exit_code
 fi
