@@ -1,4 +1,4 @@
-FROM debian:stretch-slim
+FROM debian:bookworm-slim
 MAINTAINER Xavier Priour <xavier.priour@assetsagacity.com>
 
 ARG APP_USER=meteor
@@ -9,7 +9,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update && apt-get install -y \
   build-essential \
   curl \
   git \
-  python \
+  python3 \
   && apt-get autoremove \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/*
